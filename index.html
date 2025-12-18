@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu - Order Now</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🍽️ Welcome to KM Restaurant</h1>
+            <p>Fresh & Delicious South Indian Cuisine</p>
+            <a href="admin.html" class="admin-link">Admin Panel</a>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Menu Section -->
+            <section class="menu-section">
+                <h2>Our Menu</h2>
+                <div id="menu-grid" class="menu-grid">
+                    <!-- Menu items will be loaded here dynamically -->
+                </div>
+            </section>
+
+            <!-- Cart Section -->
+            <section class="cart-section">
+                <h2>Your Cart</h2>
+                <div id="cart-items" class="cart-items">
+                    <p class="empty-cart">Your cart is empty</p>
+                </div>
+                <div class="cart-summary">
+                    <div class="total">
+                        <span>Total:</span>
+                        <span id="cart-total">₹0</span>
+                    </div>
+                    <div class="cart-actions">
+                        <button id="clear-cart-btn" class="btn btn-secondary">Clear Cart</button>
+                        <button id="pay-now-btn" class="btn btn-primary">Pay Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Payment Modal -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Payment</h2>
+                <div class="bill-section">
+                    <h3>Bill Details</h3>
+                    <div id="bill-items"></div>
+                    <div class="bill-total">
+                        <strong>Total Amount: <span id="bill-total">₹0</span></strong>
+                    </div>
+                </div>
+                <div class="qr-section">
+                    <h3>Scan QR Code to Pay</h3>
+                    <div id="qr-code"></div>
+                    <p class="payment-info">UPI Payment</p>
+                </div>
+                <div class="modal-actions">
+                    <button id="print-bill-btn" class="btn btn-secondary">Print Bill</button>
+                    <button id="confirm-payment-btn" class="btn btn-success">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print-only Bill -->
+    <div id="print-bill" class="print-only">
+        <div class="print-header">
+            <h1>KM Restaurant Bill</h1>
+            <p>Thank you for dining with us!</p>
+            <p class="print-date"></p>
+        </div>
+        <div class="print-items"></div>
+        <div class="print-total"></div>
+        <div class="print-footer">
+            <p>Visit Again!</p>
+        </div>
+    </div>
+
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
